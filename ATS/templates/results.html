@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Scanner Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Your resume matches about {{ match_percentage }}% of the job description.</h2>
+    <div class="form-box">
+    <h4>Here are the skills/keywords you should add in your resume</h4>
+    <h3>Missing Skills:</h3>
+    {% if missing_skills == 0 %}
+        <p>All the skills are present.</p>
+    {% else %}
+        <ul>
+            {% for skill in missing_skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </div>
+</body>
+</html>

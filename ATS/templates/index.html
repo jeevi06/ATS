@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Application Tracking System</title>
+</head>
+<body>
+    <h1>Application Tracking System</h1>
+    <div class="form-box">
+        <form action="/scan" method="post" enctype="multipart/form-data">
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.docx" required><br><br>
+            
+            <label for="job_description">Enter Job Description:</label><br>
+            <textarea id="job_description" name="job_description" rows="4" cols="50" required></textarea><br><br>
+            
+            <div class="button-container">
+                <button type="submit">Scan Resume</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
